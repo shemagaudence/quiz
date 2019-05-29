@@ -1,0 +1,161 @@
+  // 1
+
+  var myObject = {
+
+   name: "Dima",
+
+   age: 34,
+
+   hair: "Brown"
+
+};
+
+  
+
+   // 2 function
+
+  function testMethode2(){
+
+
+
+
+        document.write(displayName(myObject));
+
+    
+
+  }
+
+  
+
+    //3
+
+	 function getMyArr(){
+
+		 
+
+		var myArray = [1, 2, 3,4,5]; 
+
+		
+
+		return myArray;
+
+	 } 
+
+
+
+
+	 //4  function
+
+   function testMethode4(){
+
+
+displayMyArry(getMyArr());
+
+		
+
+  }
+
+  
+
+  //  5 function
+
+  
+
+    function testMethode5(){
+
+
+
+
+		multpleNumber();
+
+  }
+
+
+
+
+  function displayName(obj){
+
+ return myObject.name;
+
+     }
+
+	  
+
+	 function displayMyArry(ar){
+
+		 
+
+		 var i = 0;
+
+var len = ar.length;
+
+for (; i < len; ) { 
+
+  document.write("MyArray["+ar[i]+"], " );
+
+  i++;
+
+}
+
+	 }
+
+	  
+
+	    // question 5 logic
+
+	  
+
+	function multpleNumber(){
+
+		
+
+		 for (var x=1; x <= 100; x++){
+
+			  if(!((x % 3 ==0&& x % 5 ==0) ||( x % 3 == 0 ) || (x % 5 == 0))) {
+
+				  document.write(x);
+
+				  document.write('<br>');
+
+			  }
+
+			 
+
+			  if( x % 3 == 0 && ! (x % 5 == 0) ) {
+
+            document.write("Fizz");
+
+		
+
+			document.write('<br>');
+
+        }
+
+		
+
+		  if( x % 5 == 0 && !(x % 3 == 0)) {
+
+            document.write("Buzz");
+
+			document.write('<br>');
+
+        }
+
+		
+
+    if( x % 3 ==0 &&  x % 5 ==0) {
+
+        document.write("FizzBuzz");
+
+		document.write('<br>');
+
+    } 
+
+       
+
+
+
+
+		 }
+
+	  }
