@@ -1,161 +1,103 @@
-  // 1
-
-  var myObject = {
-
-   name: "Dima",
-
-   age: 34,
-
-   hair: "Brown"
-
-};
-
-  
-
-   // 2 function
-
-  function testMethode2(){
-
-
-
-
-        document.write(displayName(myObject));
-
+//fibonaci
+public class FibonaciNumber {
     
+    public static void main(String [] args){
+        System.err.println("Enter a number");
+        //Scanner sc = new Scanner(System.in);
+        //the initial second previous fibonaci number is 0
+        Long prev=new Long(0);
+        //the initial first previous fibonaci is 1
+        Long next=new Long(1);
+        //initialize a temporary holder with the previous previous 
+        Long i=prev;
+        //initialize the sum by 0
+        Long sum=new Long(0);
+        
+        //int c=0;
+        while(prev<=next){
+            System.out.println(next+"  ");
+            //we add the next fibonaci number to the sum
+            sum= sum+next;
+            // the previous previous becomes the previous       
+            prev =next;
+            //the previous become the actual fibonaci
+            next=i+next;
+            // our temporary holder holdes the new previous 
+            i=prev;
+            
+        }
+        System.out.println("\n\nThe sum: "+sum);
+    
+    }
+    
+    
+    
+}
+//prime factor
 
-  }
-
-  
-
-    //3
-
-	 function getMyArr(){
-
-		 
-
-		var myArray = [1, 2, 3,4,5]; 
-
-		
-
-		return myArray;
-
-	 } 
-
-
-
-
-	 //4  function
-
-   function testMethode4(){
-
-
-displayMyArry(getMyArr());
-
-		
-
-  }
-
-  
-
-  //  5 function
-
-  
-
-    function testMethode5(){
-
-
-
-
-		multpleNumber();
-
-  }
-
-
-
-
-  function displayName(obj){
-
- return myObject.name;
-
-     }
-
-	  
-
-	 function displayMyArry(ar){
-
-		 
-
-		 var i = 0;
-
-var len = ar.length;
-
-for (; i < len; ) { 
-
-  document.write("MyArray["+ar[i]+"], " );
-
-  i++;
-
+public class PrimeFactor {
+    
+    public static void main(String ... args){
+        /**
+         * the given number in the exercise was to large for the data types available : int,Long,bigInt etc..
+         * for that we have used another number , but the logic is the same for any number.
+         */
+        int a=13195;
+        int large=1;
+         //loop to move trhough numbers up to a
+        for(int i=1;i<a;i++){
+            //initialize a counter 
+            int c=0;
+           // loop to find if a number is a prime number
+            for(int j=i;j>=2;j--){
+                // if the remainder is zero do nothing
+                if(i%j==0){
+                   // break;
+                }else{
+                    // if the number is not divisible or there is some remainders increment c by one
+                    c++;
+                }
+                   
+                }
+            //at the end of the loop to determine if i is a prime number
+            //first conditions: 1.i should be a prime number so: c = (i-2)
+            //2.a dividede by i ; the remainder is zero
+           
+             if(a%i==0 && c==(i-2)){
+                        large=i;
+                    }
+            }
+        
+        System.out.println("\nThe largest Factor: "+large);
+    }
+    
 }
 
-	 }
 
-	  
+//divide by 3 and 5
 
-	    // question 5 logic
 
-	  
+public class Gapson {
 
-	function multpleNumber(){
-
-		
-
-		 for (var x=1; x <= 100; x++){
-
-			  if(!((x % 3 ==0&& x % 5 ==0) ||( x % 3 == 0 ) || (x % 5 == 0))) {
-
-				  document.write(x);
-
-				  document.write('<br>');
-
-			  }
-
-			 
-
-			  if( x % 3 == 0 && ! (x % 5 == 0) ) {
-
-            document.write("Fizz");
-
-		
-
-			document.write('<br>');
-
-        }
-
-		
-
-		  if( x % 5 == 0 && !(x % 3 == 0)) {
-
-            document.write("Buzz");
-
-			document.write('<br>');
-
-        }
-
-		
-
-    if( x % 3 ==0 &&  x % 5 ==0) {
-
-        document.write("FizzBuzz");
-
-		document.write('<br>');
-
-    } 
-
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+       // the sum starts at 0
+       int sum=0;
+       for(int a=0;a<1000;a++){
+           // if a (any number below 1000) can be divided by 3 or 5 , we add it to the sum   
+            if(a%3==0 || a%5==0){
+                sum=sum+a;
+           
+            }else{
+           
+            }
+       }
        
-
-
-
-
-		 }
-
-	  }
+        System.out.println("\nThe sum is: "+sum);
+    }
+    
+}
